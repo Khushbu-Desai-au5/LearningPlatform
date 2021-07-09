@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Course</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/sidenav.css" type="text/css" >
+  <link rel="stylesheet" href="/login.css" type="text/css" >
+
+</head>
+<body>
+  <div class="sidenav">
+    <a href="/api/getAllCourse">DashBoard</a>
+    <a href="/api/createCourse">Create Course</a>
+    <a href="/api/updateCourse">Update Course</a>
+    <a href="/api/deleteCourse">Delete Course</a>
+    <a href="/api/changeProfile">Edit Profile</a>
+    <hr/>
+    <a href="/api/logout"><button class="logoutButton btn btn-primary">Logout</button></a>
+  </div>
+  <div class="main">
+    <form action="/api/createCourse"  method="POST" style="border:1px solid #ccc">
+      <div class="container">
+        <h3>Create New Course</h3>
+        <hr>
+        <div class="row">
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+              <label for="email"><b>Course Name</b></label>
+              <input type="text" name="courseName">
+            </div>
+            <div class="col-sm-3">
+              <label for="email"><b>Category</b></label>
+              <select name="category">
+                <option value="Web Development">Web Development</option>
+                <option value="Backend Development">Backend Development</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-8">
+              <label for="oneLiner"><b>One Liner</b></label>
+              <input type="text" name="oneLine">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2">
+              <label for="hours"><b>Duration in Hours</b></label>
+              <input type="number" name="hours">
+            </div>
+            <div class="col-sm-3">
+              <label for="language"><b>Language</b></label>
+              <input type="text" name="language">
+            </div>
+            <div class="col-sm-3">
+              <label for="photo"><b>Upload Cover photo</b></label>
+              <input type="file" name="photo">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-8">
+              <label for="photo"><b>Description</b></label>
+              <textarea type="text" name="description">
+                  </textarea>
+            </div>
+          </div>
+          <div class="clearfix">
+            <div class="col-sm-1"></div>
+            <button type="submit" class="btn btn-primary signupbtn">Create New Course</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

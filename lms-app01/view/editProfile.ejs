@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Edit Profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/sidenav.css" type="text/css" >
+  <link rel="stylesheet" href="/login.css" type="text/css" >
+
+</head>
+<body>
+  <div class="sidenav">
+    <a href="/api/getAllCourse">DashBoard</a>
+    <a href="/api/createCourse">Create Course</a>
+    <a href="/api/updateCourse">Update Course</a>
+    <a href="/api/deleteCourse">Delete Course</a>
+    <a href="/api/changeProfile">Edit Profile</a>
+    <hr/>
+    <a href="/api/logout"><button class="logoutButton btn btn-primary">Logout</button></a>
+  </div>
+  <div class="main">
+    <form action="/api/changeProfile" method="POST" style="border:1px solid #ccc">
+      <div class="container">
+        <h1>Change Profile</h1>
+        <hr>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-6">
+            <label for="name"><b>Name</b></label>
+            <input type="text" name="name" value="<%=users.name %>" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-6">
+            <label for="email"><b>Email ID</b></label>
+            <input type="text" value="<%=users.email %>" placeholder="Enter Email" name="email" required>
+          </div>
+        </div>
+        <div class="clearfix">
+          <div class="col-sm-1"></div>
+          <button type="submit" class="btn btn-primary signupbtn">Change Profile</button>
+        </div>
+      </div>
+  </form>
+  <form action="/api/changePassword" method="POST" style="border:1px solid #ccc">
+    <div class="container">
+      <h1>Change Password</h1>
+      <hr>
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+          <label for="psw"><b>New Password</b></label>
+          <input type="password" name="psw" value="<%=users.password %>" required>
+        </div>
+        <div class="col-sm-3">
+          <label for="psw"><b>Confirm Password</b></label>
+          <input type="password" name="confirmpsw" value="<%=users.confirmPassword %>" required>
+        </div>
+      </div>
+      <div class="clearfix">
+        <div class="col-sm-1"></div>
+        <button type="submit" class="btn btn-primary signupbtn">Change Password</button>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+  </form>
+</body>
+</html>

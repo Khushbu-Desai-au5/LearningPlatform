@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Course</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/sidenav.css" type="text/css" >
+  <link rel="stylesheet" href="/login.css" type="text/css" >
+</head>
+<body>
+  <div class="sidenav">
+    <a href="/api/getAllCourse">DashBoard</a>
+    <a href="/api/createCourse">Create Course</a>
+    <a href="/api/updateCourse">Update Course</a>
+    <a href="/api/deleteCourse">Delete Course</a>
+    <a href="/api/changeProfile">Edit Profile</a>
+    <hr/>
+    <a href="/api/logout"><button class="logoutButton btn btn-primary">Logout</button></a> 
+  </div>
+  <div class="main">
+    <form action="/api/updateCourse" method="POST" style="border:1px solid #ccc">
+      <div class="container">
+        <h3>Update Course</h3>
+        <input type="hidden" name="id" value="<%= course._id %>"></input>
+        <hr>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-4">
+            <label for="courseName"><b>Course Name</b></label>
+            <input type="text" name="courseName" value="<%= course.name %>">
+          </div>
+          <div class="col-sm-4">
+            <label for="course"><b>Select Course</b></label>
+            <select value="<%= course.category %>" name="category">
+              <option value="Web Application">Web Application</option>
+              <option value="Backend Development">Backend Development</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-8">
+            <label for="oneLine"><b>One Liner</b></label>
+            <input type="text" name="oneLine" value="<%= course.oneLiner %>">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-2">
+            <label for="hours"><b>Duration in Hours</b></label>
+            <input type="text" name="hours" value="<%= course.duration %>">
+          </div>
+          <div class="col-sm-3">
+            <label for="language"><b>Language</b></label>
+            <input type="text" name="language" value="<%= course.language %>">
+          </div>
+          <div class="col-sm-3">
+            <label for="photo"><b>Upload Cover photo</b></label>
+            <input type="file" name="photo" value="<%= course.photo %>">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-8">
+            <label for="photo"><b>Description</b></label>
+            <textarea type="text" name="description"><%= course.description %></textarea>
+          </div>
+        </div>
+        <div class="clearfix">
+          <div class="col-sm-1"></div>
+          <button type="submit" class="btn btn-primary signupbtn">Upload Course</button>
+        </div>
+      </div>
+  </div>
+  </form>
+  </div>
+</body>
+
+</html>

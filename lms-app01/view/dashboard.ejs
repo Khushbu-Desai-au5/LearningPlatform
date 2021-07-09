@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DashBoard</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/sidenav.css" type="text/css" >
+      </head>
+<body>
+    <div class="sidenav">
+        <a href="/api/getAllCourse">DashBoard</a>
+        <a href="/api/createCourse">Create Course</a>
+        <a href="/api/updateCourse">Update Course</a>
+        <a href="/api/deleteCourse">Delete Course</a>
+        <a href="/api/changeProfile">Edit Profile</a>
+        <hr/>
+      <a href="/api/logout"><button class="logoutButton btn btn-primary">Logout</button></a> 
+    </div>
+    <div class="main">
+        <div class="container">
+            <h3>My Courses</h3>
+            <hr>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Photo</th>
+                    <th scope="col">Course Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <% for (var i = 0; i < courses.length; i++) { %>
+
+                <tr>
+                    <td><%= i+1 %></td>
+                    <td><%= courses[i].photo %></td>
+                    <td><%= courses[i].name %></td>
+                    <td><%= courses[i].category %></td>
+                    <td><%= courses[i].duration %></td>
+                    <td><a href="/api/updateCourse?id=<%=courses[i]._id %>"  ><button class="btn btn-info ">Update</button></a></td>
+                    <td><a href="/api/deleteCourse?id=<%=courses[i]._id %>"><button class="btn btn-info ">Delete</button></a></td>
+                </tr>
+                <% } %>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
